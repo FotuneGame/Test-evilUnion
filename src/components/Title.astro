@@ -1,0 +1,53 @@
+---
+import ClickSVG from "../assets/clickSVG.svg";
+---
+
+
+
+<div class="title">
+	<p>ПОКЕМОНЫ API</p>
+	<div>
+		<ClickSVG/>
+		<p>
+			Нажмите на
+			нужное Покемона
+		</p>
+	</div>
+</div>
+
+
+
+<style>
+	.title {
+		font-size: 12px;
+		width: 100%;
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+	}
+
+	.title > p{
+		border: 1px solid white;
+		padding: 7px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 13.52px;
+	}
+
+	.title > div{
+		display:flex;
+		align-items:center;
+		gap: 10px;
+		font-size: 12px;
+	}
+
+	.title > div > p{
+		max-width: 108px;
+	}
+
+	@media screen and (max-width: 800px) {
+		.title {
+			justify-content: space-around;
+		}
+	}
+</style>

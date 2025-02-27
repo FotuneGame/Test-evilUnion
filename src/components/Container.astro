@@ -1,0 +1,36 @@
+---
+import Title from "./Title.astro"; 
+import Pockemons from "./Pockemons/Pockemons.jsx";
+import {loadList, loadPockemon} from "../api/pockemons.js"
+
+const list = await loadList(10,0);
+const pockemon = await loadPockemon(list[0] ? list[0].url : null);
+---
+
+
+
+<div class="container">
+	<Title />
+	<Pockemons list={list} pockemon={pockemon} client:visible/>
+</div>
+
+
+
+<style>
+	.container {
+		max-width: 1090px;
+		padding-right: 150px;
+		padding-left: 150px;
+		gap: 54px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 800px) {
+		.container {
+			padding-right: 0px;
+			padding-left: 0px;
+		}
+	}
+}
+</style>

@@ -1,0 +1,8 @@
+---
+import {loadList} from "../api/pockemons.js"
+const list = await loadList(10,0);
+---
+
+<meta name="list of pockemons" content={
+    Array.isArray(list) ? list.map(el => {return el.name}).toString() : ""
+}/>
